@@ -165,14 +165,15 @@
             });
         }];
         
-        // if the previous controller is dismissing, wait it's completion
-        if (stackControllers.count > 1) {
-            for (UIViewController *preController in stackControllers) {
-                if ([preController isDismissing]) {
-                    return ;
-                }
-            }
-        }
+        //这个地方可能会有问题
+//        // if the previous controller is dismissing, wait it's completion
+//        if (stackControllers.count > 1) {
+//            for (UIViewController *preController in stackControllers) {
+//                if ([preController isDismissing]) {
+//                    return ;
+//                }
+//            }
+//        }
         
         // present a new controller before dismissing the presented controller if exists
         dispatch_async(dispatch_get_main_queue(), ^{
